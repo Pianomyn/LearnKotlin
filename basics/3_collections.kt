@@ -18,11 +18,15 @@ fun lists() {
   println(readOnlyShapes)
   // [triangle, square, circle]
 
-  // Mutable list
+  // Mutable
   val shapes: MutableList<String> = mutableListof("triangle", "square", "circle")
   println(shapes)
   // [triangle, square, circle]
 
   // Can obtain read only view to prevent unwanted modifications
   val shapesView: List<String> = shapes
+  println("The second shape is ${shapesView[1]}")
+  // square
+  println("The first shape is ${shapesView.first()} and the last shape is ${shapesView.last()}")
+  // triangle | circle
 }
