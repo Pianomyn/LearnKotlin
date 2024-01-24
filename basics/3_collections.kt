@@ -22,11 +22,14 @@ fun lists() {
   val shapes: MutableList<String> = mutableListof("triangle", "square", "circle")
   println(shapes)
   // [triangle, square, circle]
+  shapes.add("hexagon")
+  shapes.remove("hexagon")
+  shapes.removeAt(3)
 
   // Can obtain read only view to prevent unwanted modifications
   val shapesView: List<String> = shapes
   println("The second shape is ${shapesView[1]}")
-  // square
   println("The first shape is ${shapesView.first()} and the last shape is ${shapesView.last()}")
-  // triangle | circle
+  println("There are ${shapesView.count()} elements in the list")
+  println("circle" in shapesView)
 }
