@@ -32,4 +32,9 @@ fun lists() {
   println("The first shape is ${shapesView.first()} and the last shape is ${shapesView.last()}")
   println("There are ${shapesView.count()} elements in the list")
   println("circle" in shapesView)
+
+  // Excercise
+  val greenNumbers = listOf(1, 4, 23)
+  val redNumbers = listOf(17, 2)
+  println("There are ${redNumbers.count() + greenNumbers.count()} total numbers")
 }

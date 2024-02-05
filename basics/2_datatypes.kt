@@ -15,8 +15,8 @@ Strings
   */
 
 val x: Int // Declaration without initialization
-x = 3
-val y: String = "Hello"
+x = 3 // Inferred type
+val y: String = "Hello" // Declared type
 
 println(x)
 println(y)
