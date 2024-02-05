@@ -3,6 +3,7 @@ fun main() {
   println(sum(y=10, x=2)) // Named arguments
   printWithPrefix("My message")
   lambdaStuff()
+  excercises()
 }
 
 // Types are required for function parameters
@@ -39,7 +40,9 @@ fun lambdaStuff() {
 
   // 2.
   val numbers = listOf(1, -2, 3, -4, 5, -6)
-  val positives = numbers.filter { x -> x > 0 }
+  val positives = numbers.filter { x -> x > 0 } // Can drop parentheses () if lambda func is only parameter
+  // If the lambda expression is the last parameter, it can be written outside the parentheses ()
+  // This is called a trailing lambda
   val negatives = numbers.filter { x -> x < 0 }
   println(positives)
   println(negatives)
@@ -62,3 +65,22 @@ fun lambdaStuff() {
   println({ str: String -> str.uppercase() }("Hello"))
 }
 
+fun excercises() {
+  // 1.
+  val actions = listOf("title", "year", "author")
+  val prefix = "https://example.com/book-info"
+  val id = 5
+  val urls = actions.map({ x -> "$prefix/$id/$x" })
+  println(urls)
+
+  // 2.
+  fun repeatN(n: Int, action: () -> Unit) {
+    // Write your code here
+    var count = n
+    while(count > 0) {
+      action()
+      count--;
+    }
+  }
+  repeatN(5) {println("Hello")}
+}
